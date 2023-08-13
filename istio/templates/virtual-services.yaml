@@ -1,0 +1,23 @@
+# virtualservice.yaml
+{{- range $micro := .Values.microservices }}
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: {{ $micro.name | lower }}-vs
+  namespace: {{ $.Release.Namespace }}
+spec:
+  gateways:
+    - {{ $.Release.Name }}-local-gateway
+  hosts:
+    - {{ $micro.name | lower }}.istio.com
+  http:
+    - match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            host: {{ $micro.name | lower }}
+            port:
+              number: {{ $micro.port }}
+---
+{{- end }}

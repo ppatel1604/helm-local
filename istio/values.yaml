@@ -1,0 +1,9 @@
+microservices:
+  - name: kiali
+    port: 20001
+  - name: grafana
+    port: 3000
+  - name: prometheus
+    port: 432
+  - name: jaeger
+    port: 16686
