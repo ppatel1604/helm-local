@@ -7,3 +7,10 @@ microservices:
     port: 432
   - name: jaeger
     port: 16686
+
+istio:
+  enabled: true
+  grafana:
+    enabled: true
+  kiali:
+    enabled: true
