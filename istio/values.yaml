@@ -4,7 +4,7 @@ microservices:
   - name: grafana
     port: 3000
   - name: prometheus
-    port: 432
+    port: 15020
   - name: jaeger
     port: 16686
 
