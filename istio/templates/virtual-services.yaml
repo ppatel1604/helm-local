@@ -16,7 +16,7 @@ spec:
             prefix: /
       route:
         - destination:
-            host: {{ $micro.name | lower }}
+            host: istio-local-{{ $micro.name | lower }}
             port:
               number: {{ $micro.port }}
 ---
